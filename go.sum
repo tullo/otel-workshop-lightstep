@@ -188,6 +188,8 @@ github.com/tklauser/numcpus v0.4.0 h1:E53Dm1HjH1/R2/aoCtXtPgzmElmn51aOkhCFSuZq//
 github.com/tklauser/numcpus v0.4.0/go.mod h1:1+UI3pD8NW14VMwdgJNJ1ESk2UnwhAnz5hMwiKKqXCQ=
 github.com/tullo/otel-workshop v0.4.2 h1:k+D9puCmZHAt3Vn78RELjlc0TF1p+VrI2/CLeVBqYx8=
 github.com/tullo/otel-workshop v0.4.2/go.mod h1:gykeiONWOUMBV+oHWiQUAPKqjQWoQkPN2fO0KM85hzE=
+github.com/tullo/otel-workshop v1.0.1 h1:P77Ga31rn/GzjqhprxElhHUT+LRFmo1AsoAaHq1Xp14=
+github.com/tullo/otel-workshop v1.0.1/go.mod h1:gykeiONWOUMBV+oHWiQUAPKqjQWoQkPN2fO0KM85hzE=
 github.com/yuin/goldmark v1.1.25/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
