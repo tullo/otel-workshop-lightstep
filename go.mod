@@ -9,7 +9,7 @@ go 1.19
 
 require (
 	github.com/lightstep/otel-launcher-go v1.12.0
-	github.com/tullo/otel-workshop v0.4.2
+	github.com/tullo/otel-workshop v0.5.0
 	go.opentelemetry.io/otel v1.12.0
 	go.opentelemetry.io/otel/metric v0.35.0
 )
