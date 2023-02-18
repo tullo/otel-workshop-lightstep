@@ -2,17 +2,17 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"os"
 	"os/signal"
 	"runtime"
-	"syscall"
-	"time"
 
 	"github.com/lightstep/otel-launcher-go/launcher"
 	"github.com/tullo/otel-workshop/web/fib"
-	"go.opentelemetry.io/otel/attribute"
-	metricglobal "go.opentelemetry.io/otel/metric/global"
+	"go.opentelemetry.io/otel/metric"
+	"go.opentelemetry.io/otel/metric/global"
+	"go.opentelemetry.io/otel/metric/instrument"
 )
 
 func newLighstepLauncher() launcher.Launcher {
@@ -79,43 +79,72 @@ func main() {
 
 func collectMetrics(ctx context.Context) {
 	// Set attributes for all metrics
-	appKey := attribute.Key("fib")
-	containerKey := attribute.Key(os.Getenv("HOSTNAME"))
+	// appKey := attribute.Key("fib")
+	// containerKey := attribute.Key(os.Getenv("HOSTNAME"))
 
 	// 1. Declare a meter.
-	meter := metricglobal.Meter("container")
+	meterProvider := global.MeterProvider()
+	//meterProvider := metric.NewNoopMeterProvider()
+	meter := meterProvider.Meter("go.opentelemetry.io/otel/metric#Container")
 
 	// 2. Declare specific metrics to collect
-	mem, _ := meter.NewInt64Counter("mem_usage")             // metric.WithDescription("Amount of memory used."),
-	disc, _ := meter.NewFloat64Counter("disk_usage")         // metric.WithDescription("Amount of disk used."),
-	quota, _ := meter.NewFloat64Counter("disk_quota")        // metric.WithDescription("Amount of disk quota available."),
-	goroutines, _ := meter.NewInt64Counter("num_goroutines") // metric.WithDescription("Amount of goroutines running."),
+	heapAlloc, _ := meter.Int64ObservableUpDownCounter("heapAllocs")
+	gcCount, _ := meter.Int64ObservableCounter("gcCount")
+	gcPause, _ := meter.Float64Histogram("gcPause")
 
-	// 3. Fetch runtime measurements that application makes available.
-	var ms runtime.MemStats
-	for {
-		// Read memory allocator statistics.
-		runtime.ReadMemStats(&ms)
+	//mem, _ := meter.NewInt64Counter("mem_usage")             // metric.WithDescription("Amount of memory used."),
+	//disc, _ := meter.NewFloat64Counter("disk_usage")         // metric.WithDescription("Amount of disk used."),
+	//quota, _ := meter.NewFloat64Counter("disk_quota")        // metric.WithDescription("Amount of disk quota available."),
+	//goroutines, _ := meter.NewInt64Counter("num_goroutines") // metric.WithDescription("Amount of goroutines running."),
+	_, err := meter.RegisterCallback(
+		func(ctx context.Context, o metric.Observer) error {
+			// 3. Fetch runtime measurements that the application makes available.
+			var ms runtime.MemStats
+			// Read memory allocator statistics.
+			runtime.ReadMemStats(&ms)
 
-		// Syscall to gather file system statistics
-		// for the current directory.
-		var fs syscall.Statfs_t
-		wd, _ := os.Getwd()
-		syscall.Statfs(wd, &fs)
-		all := float64(fs.Blocks) * float64(fs.Bsize)
-		free := float64(fs.Bfree) * float64(fs.Bsize)
+			o.ObserveInt64(heapAlloc, int64(ms.HeapAlloc))
+			o.ObserveInt64(gcCount, int64(ms.NumGC))
 
-		// Assign observed metric values to our declared meters.
-		meter.RecordBatch(ctx, []attribute.KeyValue{
-			appKey.String(os.Getenv("PROJECT_DOMAIN")), // TODO project id?
-			containerKey.String(os.Getenv("HOSTNAME"))},
-			disc.Measurement(all-free),
-			quota.Measurement(all),
-			mem.Measurement(int64(ms.Sys)),
-			goroutines.Measurement(int64(runtime.NumGoroutine())),
-		)
-
-		// Take measurements once per minute.
-		time.Sleep(time.Minute)
+			// This function synchronously records the pauses
+			computeGCPauses(ctx, gcPause, ms.PauseNs[:])
+			return nil
+		},
+		heapAlloc,
+		gcCount,
+	)
+	if err != nil {
+		fmt.Println("Failed to register callback")
+		panic(err)
 	}
+	// https://pkg.go.dev/go.opentelemetry.io/otel/metric#example-Meter-Asynchronous_multiple
+}
+
+func computeGCPauses(context.Context, instrument.Float64Histogram, []uint64) {}
+
+func todoOutdatedStuff() {
+	/*
+		for {
+			// Syscall to gather file system statistics
+			// for the current directory.
+			var fs syscall.Statfs_t
+			wd, _ := os.Getwd()
+			syscall.Statfs(wd, &fs)
+			all := float64(fs.Blocks) * float64(fs.Bsize)
+			free := float64(fs.Bfree) * float64(fs.Bsize)
+
+			// Assign observed metric values to our declared meters.
+			meter.RecordBatch(ctx, []attribute.KeyValue{
+				appKey.String(os.Getenv("PROJECT_DOMAIN")), // TODO project id?
+				containerKey.String(os.Getenv("HOSTNAME"))},
+				disc.Measurement(all-free),
+				quota.Measurement(all),
+				mem.Measurement(int64(ms.Sys)),
+				goroutines.Measurement(int64(runtime.NumGoroutine())),
+			)
+
+			// Take measurements once per minute.
+			time.Sleep(time.Minute)
+		}
+	*/
 }
