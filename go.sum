@@ -157,6 +157,8 @@ github.com/lightstep/otel-launcher-go v1.14.0 h1:Rr5LPJQksxwc5V3bzTYyyfWcZGIz25C
 github.com/lightstep/otel-launcher-go v1.14.0/go.mod h1:w83Is1IK+N5EEdlQG3Mlewllh4rigugsiYYR5lLsSLE=
 github.com/lightstep/otel-launcher-go v1.15.1 h1:lMYC4+YWnYoxl8d9tblfH3K+Vdy2nw1IfsbGnbJui0g=
 github.com/lightstep/otel-launcher-go v1.15.1/go.mod h1:gHoiKGYxJzzlgqlxjiQ1XRQnbsCoYieEFbWMdvPp7ow=
+github.com/lightstep/otel-launcher-go v1.16.0 h1:SyBGr2aLY34kF2EekNB4fWI8WFsr4bPXgX8JJV8UOWo=
+github.com/lightstep/otel-launcher-go v1.16.0/go.mod h1:TgED2pANpdC6lPCt1NJX2bX67Pya8u1D751hj7gmoo4=
 github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.13.1 h1:SUe+BsF4ztvZsV1pzmA/PjAvEHrVlCG33z07JCG1C64=
 github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.13.1/go.mod h1:z2ufB83qFVl1bf9sflaftOwaEBCe9JZ1dBPzx1khYAE=
 github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.13.4 h1:VqZXAxI0jaSoozAxhJEI4qRV9NQlCWAensn8pv28+6w=
@@ -165,6 +167,8 @@ github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.14.0 h1:RJRzv
 github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.14.0/go.mod h1:z2ufB83qFVl1bf9sflaftOwaEBCe9JZ1dBPzx1khYAE=
 github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.15.1 h1:fpLmxAKMQ0L6QqNEfdlLrE+WdteEShQZoQJkGjYvgII=
 github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.15.1/go.mod h1:/0/bm/2+CXBORX87GAllajLc0JTUoXJB5V9JEnbPrso=
+github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.16.0 h1:y035YcQT8XCVpUN4kjF068H7PQKTWeTh578VM0VcLXY=
+github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.16.0/go.mod h1:/0/bm/2+CXBORX87GAllajLc0JTUoXJB5V9JEnbPrso=
 github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.13.1 h1:8BRBcLUj2iGsaQXUVwGKQwu6mWeu/ikhePFmTnhX5B4=
 github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.13.1/go.mod h1:2kv5pWtdkZuGkxFLe+SZixNp7DIoYADxzhG9hvaejZk=
 github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.13.4 h1:uIgydKOqkf1UbkYc1aqsl2sF0Zix6LKwt5qxPAoqDGo=
@@ -173,6 +177,8 @@ github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.14.0 h1:q/E4NnNqAr
 github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.14.0/go.mod h1:v2ECUoxhNoLvW72qQ0YC90cGsXcsz21RPJAXTAMcpdw=
 github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.15.1 h1:QGEBecxaohJat0ByvbRLOcVvEh8mL2j46OBfebFwuAA=
 github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.15.1/go.mod h1:lJKRTzSTTNK1LSKBgz1cZfoRFSM9C2+d9MfHb0ue9gM=
+github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.16.0 h1:OT1TLTH7o8Sh5KOM0pOMsbdpJdIrIHoraxjQ/wCIR4c=
+github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.16.0/go.mod h1:lJKRTzSTTNK1LSKBgz1cZfoRFSM9C2+d9MfHb0ue9gM=
 github.com/lightstep/otel-launcher-go/pipelines v1.13.1 h1:GiJZH4nQZ0f/scaetMTTjc68bVHb+kYbBNfmpC/dLYo=
 github.com/lightstep/otel-launcher-go/pipelines v1.13.1/go.mod h1:WEWUz2xyud3ZZtPr7bL8USQJPJctiRl4FpMxa8m1Cfs=
 github.com/lightstep/otel-launcher-go/pipelines v1.13.4 h1:Fr5JwnY0ZogpZ7vgC2gYfK+G6FSjljiWRn7U52FOLJQ=
@@ -181,6 +187,8 @@ github.com/lightstep/otel-launcher-go/pipelines v1.14.0 h1:De02qj3OrDdwe8PYtzMWE
 github.com/lightstep/otel-launcher-go/pipelines v1.14.0/go.mod h1:dYqU1yXEht/bJlO83mzqj5AenlGzFOIlsbUrgYTdojI=
 github.com/lightstep/otel-launcher-go/pipelines v1.15.1 h1:V/OEXtqTDF8459YAZWPAiceqoBFbWkcaQ266MnPVkIM=
 github.com/lightstep/otel-launcher-go/pipelines v1.15.1/go.mod h1:J68IYohPg8rDHo7WlJbQsXAujZHiIGJtlNTlbjV0TuY=
+github.com/lightstep/otel-launcher-go/pipelines v1.16.0 h1:aha/Vg1IUxro+PAcIrxC1z/6uUwGAIXRjZks6mv3h0Q=
+github.com/lightstep/otel-launcher-go/pipelines v1.16.0/go.mod h1:v3pYh+5XnvtpVm0y/bcOEQeXzQ6/u/BLh2UdqVBSZ2c=
 github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0 h1:6E+4a0GO5zZEnZ81pIr0yLvtUWk2if982qA3F3QD6H4=
 github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0/go.mod h1:zJYVVT2jmtg6P3p1VtQj7WsuWi/y4VnjVBn7F8KPB3I=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
