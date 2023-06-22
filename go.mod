@@ -8,7 +8,7 @@ go 1.19
 // go.opentelemetry.io/otel/metric v0.25.0 => go.opentelemetry.io/otel/metric v0.23.0
 
 require (
-	github.com/lightstep/otel-launcher-go v1.18.1
+	github.com/lightstep/otel-launcher-go v1.18.3
 	github.com/tullo/otel-workshop v1.0.1
 	go.opentelemetry.io/otel/metric v1.16.0
 )
