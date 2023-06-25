@@ -11,8 +11,7 @@ import (
 	"github.com/lightstep/otel-launcher-go/launcher"
 	"github.com/tullo/otel-workshop/web/fib"
 	"go.opentelemetry.io/otel/metric"
-	"go.opentelemetry.io/otel/metric/global"
-	"go.opentelemetry.io/otel/metric/instrument"
+	sdk "go.opentelemetry.io/otel/sdk/metric"
 )
 
 func newLighstepLauncher() launcher.Launcher {
@@ -83,8 +82,7 @@ func collectMetrics(ctx context.Context) {
 	// containerKey := attribute.Key(os.Getenv("HOSTNAME"))
 
 	// 1. Declare a meter.
-	meterProvider := global.MeterProvider()
-	//meterProvider := metric.NewNoopMeterProvider()
+	meterProvider := sdk.NewMeterProvider()
 	meter := meterProvider.Meter("go.opentelemetry.io/otel/metric#Container")
 
 	// 2. Declare specific metrics to collect
@@ -120,7 +118,7 @@ func collectMetrics(ctx context.Context) {
 	// https://pkg.go.dev/go.opentelemetry.io/otel/metric#example-Meter-Asynchronous_multiple
 }
 
-func computeGCPauses(context.Context, instrument.Float64Histogram, []uint64) {}
+func computeGCPauses(context.Context, metric.Float64Histogram, []uint64) {}
 
 func todoOutdatedStuff() {
 	/*
