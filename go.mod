@@ -90,7 +90,7 @@ require (
 	go.opentelemetry.io/collector/processor v0.88.0 // indirect
 	go.opentelemetry.io/collector/processor/batchprocessor v0.88.0 // indirect
 	go.opentelemetry.io/collector/receiver v0.88.0 // indirect
-	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.45.0 // indirect
+	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.46.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/host v0.45.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace v0.44.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.45.0 // indirect
