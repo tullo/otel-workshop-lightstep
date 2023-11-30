@@ -9,7 +9,7 @@ toolchain go1.21.4
 // go.opentelemetry.io/otel/metric v0.25.0 => go.opentelemetry.io/otel/metric v0.23.0
 
 require (
-	github.com/lightstep/otel-launcher-go v1.21.0
+	github.com/lightstep/otel-launcher-go v1.22.0
 	github.com/tullo/otel-workshop/web/fib v1.0.4
 	go.opentelemetry.io/otel/metric v1.21.0
 	go.opentelemetry.io/otel/sdk/metric v1.21.0
@@ -45,10 +45,10 @@ require (
 	github.com/knadh/koanf v1.5.0 // indirect
 	github.com/knadh/koanf/v2 v2.0.1 // indirect
 	github.com/lightstep/go-expohisto v1.0.0 // indirect
-	github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.21.0 // indirect
-	github.com/lightstep/otel-launcher-go/lightstep/sdk/internal v1.21.0 // indirect
-	github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.21.0 // indirect
-	github.com/lightstep/otel-launcher-go/pipelines v1.21.0 // indirect
+	github.com/lightstep/otel-launcher-go/lightstep/instrumentation v1.22.0 // indirect
+	github.com/lightstep/otel-launcher-go/lightstep/sdk/internal v1.22.0 // indirect
+	github.com/lightstep/otel-launcher-go/lightstep/sdk/metric v1.22.0 // indirect
+	github.com/lightstep/otel-launcher-go/pipelines v1.22.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20231016141302-07b5767bb0ed // indirect
 	github.com/minio/asm2plan9s v0.0.0-20200509001527-cdd76441f9d8 // indirect
 	github.com/minio/c2goasm v0.0.0-20190812172519-36a3d3bbc4f3 // indirect
@@ -61,6 +61,7 @@ require (
 	github.com/open-telemetry/otel-arrow v0.10.0 // indirect
 	github.com/open-telemetry/otel-arrow/collector v0.10.0 // indirect
 	github.com/open-telemetry/otel-arrow/collector/exporter/otelarrowexporter v0.10.0 // indirect
+	github.com/open-telemetry/otel-arrow/collector/processor/concurrentbatchprocessor v0.10.0 // indirect
 	github.com/pierrec/lz4/v4 v4.1.18 // indirect
 	github.com/power-devops/perfstat v0.0.0-20221212215047-62379fc7944b // indirect
 	github.com/sethvargo/go-envconfig v0.9.0 // indirect
@@ -111,6 +112,7 @@ require (
 	go.uber.org/zap v1.26.0 // indirect
 	golang.org/x/mod v0.14.0 // indirect
 	golang.org/x/net v0.18.0 // indirect
+	golang.org/x/sync v0.5.0 // indirect
 	golang.org/x/sys v0.14.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.15.0 // indirect
