@@ -8,7 +8,7 @@ toolchain go1.24.3
 // go.opentelemetry.io/otel/metric v0.25.0 => go.opentelemetry.io/otel/metric v0.23.0
 
 require (
-	github.com/lightstep/otel-launcher-go v1.34.0
+	github.com/lightstep/otel-launcher-go v1.35.0
 	github.com/tullo/otel-workshop/web/fib v1.0.4
 	go.opentelemetry.io/otel/metric v1.35.0
 	go.opentelemetry.io/otel/sdk/metric v1.35.0
