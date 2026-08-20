@@ -1,7 +1,7 @@
 module github.com/tullo/otel-workshop-lightstep
 
 go 1.22
-toolchain go1.26.6
+toolchain go1.27.0
 
 // replace github.com/tullo/otel-workshop => ../workshop
 
